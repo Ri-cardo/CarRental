@@ -1,0 +1,117 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="CarRental.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    
+    <link href="css/Style.css" rel="stylesheet" />
+    
+
+    
+    <%-- Javascript Link--%>
+    <script src="Scripts/jquery-3.4.1.slim.min.js"></script>
+    <script src="Scripts/popper.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server"> 
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <form runat="server">
+        <div>
+        <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top" >
+            <button class="navbar-toggler" data-toggler="collapse" data-target="#collapse_target">
+                <span class="navbar-toggler-icon"> </span>
+
+            </button>
+            
+            <div class="collapse navbar-collapse" id="collapse_target">
+
+            <img src="imgs/logo.png" />
+           
+            <span class="navbar-text"> R.S Rentals</span>
+            <ul class="navbar-nav">
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="Home.aspx"> Home </a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target" href="#">
+                        View Cars
+                        <span class="caret"></span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown_target">
+                        <a class="dropdown-item"> Cars </a>
+                        <div class="dropdown-divider"> </div>
+                        <a class="dropdown-item"> Suvs </a>
+                         <div class="dropdown-divider"> </div>
+                        <a class="dropdown-item"> Van </a>
+
+                    </div>
+
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="Contact.aspx"> Contact Us </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="About.aspx"> About Us </a>
+                </li>
+            </ul>
+
+
+        </div>
+        </nav>
+        </div>
+
+
+
+
+
+       
+        <!-- Main Content Placeholder -->
+        <div>
+            <asp:ContentPlaceHolder ID="contentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+        </div>
+        <!-- Main Content Placeholder -->
+
+        <footer>
+            <div id="footer1" class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                        <p>
+                            <asp:LinkButton class="footerlinks" ID="LinkButton6" runat="server" 
+                               > Admin Login</asp:LinkButton>
+                            &nbsp;
+
+                           <asp:LinkButton class="footerlinks" ID="LinkButton11" runat="server" 
+                               Visible="false"> Car Inventory</asp:LinkButton>
+                            &nbsp;
+                        </p>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+            <p> &copy All right Reversed. </p>
+        </footer>
+        
+    </form>
+</body>
+</html>
